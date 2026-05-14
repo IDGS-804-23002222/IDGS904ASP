@@ -1,0 +1,19 @@
+# Visual Studio
+.vs/
+
+# Compilación y salida
+bin/
+obj/
+
+# Archivos temporales de Visual Studio
+*.dtbcache.json
+*.cache
+*.user
+*.suo
+*.sln.user
+
+# Otros archivos comunes
+packages/
+*.db
+*.db-shm
+*.db-wal

@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Contacto";
+}
+
+<h1>IDGS904</h1>
+<div>
+    <h2>Bienvenido</h2>
+</div>
+
+<h3>@ViewBag.Nombre.</h3>
+<h3>@ViewBag.Apellido.</h3>
+<p>@ViewData["Materia"]</p>
+
+@Html.ActionLink("Prueba", "Index", "Home", null, new { miAtribute = "Valor1", 
+    @class="btn btn-danger" });
+
