@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using IDGS904ASP.Models;
 
 namespace IDGS904ASP.Controllers
 {
@@ -11,7 +12,14 @@ namespace IDGS904ASP.Controllers
         // GET: Cinepolis
         public ActionResult Index()
         {
-            return View();
+            return View(new Cinepolis());
+        }
+
+        [HttpPost]
+        public ActionResult Index(Cinepolis cinepolis)
+        {
+            cinepolis.CalcularPago();
+            return View(cinepolis); 
         }
     }
 }

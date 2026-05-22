@@ -1,7 +1,85 @@
-﻿
+﻿@model IDGS904ASP.Models.Cinepolis
+
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Cinépolis";
+    Layout = null;
 }
 
-<h2>Index</h2>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Cinépolis</title>
 
+    <link href="~/Content/estilos.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="overlay">
+
+        <div class="contenedor">
+
+            <div class="titulo">
+                Cinepolis
+            </div>
+
+            <form method="post">
+
+                <fieldset class="entradas">
+                    <legend>Entradas</legend>
+
+                    <label>Nombre</label>
+                    <input type="text" name="Nombre" value="@Model.Nombre" />
+                    <br /><br />
+
+                    <label>Cantidad Compradores</label>
+                    <input type="number" name="CantidadCompradores"
+                           value="@Model.CantidadCompradores" />
+
+                    <br /><br />
+
+                    <label>Cantidad de Boletos</label>
+                    <input type="number" name="CantidadBoletos"
+                           value="@Model.CantidadBoletos" />
+
+                    <br /><br />
+
+                    <label>Tarjeta Cineco</label>
+
+                    <input type="radio" name="TarjetaCineco" value="true" />
+                    <span>Si</span>
+
+                    <input type="radio" name="TarjetaCineco"
+                           value="false" checked />
+                    <span>No</span>
+                </fieldset>
+
+                <fieldset class="salidas">
+                    <legend>Salidas</legend>
+
+                    <label>Valor a Pagar</label>
+                    <input type="text"
+                           value="@Model.ValorPagar.ToString("C")"
+                           readonly />
+                </fieldset>
+
+                <fieldset class="acciones">
+                    <legend>Acciones</legend>
+
+                    <button type="submit">Procesar</button>
+
+                    <a href="/" class="btnSalir">Salir</a>
+                </fieldset>
+
+                <div class="mensaje">
+                    @Model.Mensaje
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
